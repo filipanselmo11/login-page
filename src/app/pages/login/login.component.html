@@ -1,9 +1,28 @@
 <app-default-login-layout
   title="Login into your account"
   primaryBtnText="Login Now"
-  secondaryBtnText="Signup Now">
+  primaryBtnText="Signup Now"
+  [disabledPrimaryBtn]="!loginForm.valid"
+  (submit)="submit()"
+  (navigate)="navigate()">
   <!-- NG CONTENT -->
     <form [formGroup]="loginForm">
-      
+      <app-input
+        formControlName="email"
+        inputName="email"
+        type="email"
+        label="Email"
+        placeholder="jondoe@email.com">
+        <img src="../../../assets/icon-1.svg" alt="">
+      </app-input>
+      <app-input
+      formControlName="password"
+        inputName="password"
+        type="password"
+        label="Password"
+        placeholder="Your password">
+        <img src="../../../assets/icon-2.svg" alt="">
+      </app-input>
+      <span>Forgot password ?</span>
     </form>
 </app-default-login-layout>
