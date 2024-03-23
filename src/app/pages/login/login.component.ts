@@ -31,6 +31,7 @@ export class LoginComponent {
     })
   }
   navigate() {
+    console.log('NAVIGATE CLICKED');
     this.router.navigate(['signup']);
   }
 }
